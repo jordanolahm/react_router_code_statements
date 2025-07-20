@@ -1,2 +1,17 @@
 # react_router_code_statements
-Code bases to test the application with typescript and react.
+
+
+## Best practices
+
+
+> Clear project structure
+
+> React hooks and functional components
+
+> Management States of components
+
+> Styles and response components
+
+> Central api.js of services
+
+> React Lazy()
