@@ -6,20 +6,21 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import React, { Suspense } from "react";
 
-import type { Route } from "./+types/root";
-import "./app.css";
+import "./src/styles/app.scss";
+import { UsersProvider } from "./src/hooks/useUsers";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 font-sans">
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -29,7 +30,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <UsersProvider>
+       <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+       </Suspense>
+    </UsersProvider>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
