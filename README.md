@@ -81,4 +81,4 @@ This approach emphasizes a balance between modular architecture, simplicity, and
 - [React Docs](https://react.dev/)
 - [React Context API](https://react.dev/reference/react/createContext)
 - [Frontend Patterns](https://www.patterns.dev/)
-- [Typescript] (https://react-typescript-cheatsheet.netlify.app/)
+- [Typescript](https://react-typescript-cheatsheet.netlify.app/)
